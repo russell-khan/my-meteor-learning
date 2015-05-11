@@ -5,4 +5,13 @@ Here I'm talking about my latest discoveries from the world	of JavaScript.
 {{/markdown}}
 {{exampleHelper}}
 {{> contextExample someText="I was set in the parent template's helper, as an argument."}}
+{{> contextExample dataContextHelper}}
+<p>{{someNested.text}}</p>
+{{#with	dataContextHelper}}
+{{>	contextExample}}
+{{/with}}
+{{#with	dataContextHelper}}
+<p>{{someText}}</p>
+<p>{{someNested.text}}</p>
+{{/with}}
 </template>
